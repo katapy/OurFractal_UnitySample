@@ -1,0 +1,211 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/kataokaryou/projects/OurFractal/OurFractal_UnitySample
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+62621
+Successfully changed project path to: /Users/kataokaryou/projects/OurFractal/OurFractal_UnitySample
+/Users/kataokaryou/projects/OurFractal/OurFractal_UnitySample
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 81.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.8f1 (507919d4fff5)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/kataokaryou/projects/OurFractal/OurFractal_UnitySample/Assets
+GfxDevice: creating device client; threaded=0
+2022-02-23 20:31:11.311 Unity[30095:1471118] Color LCD preferred device: Intel(R) UHD Graphics 617 (low power)
+2022-02-23 20:31:11.311 Unity[30095:1471118] Metal devices available: 1
+2022-02-23 20:31:11.311 Unity[30095:1471118] 0: Intel(R) UHD Graphics 617 (low power)
+2022-02-23 20:31:11.312 Unity[30095:1471118] Using device Intel(R) UHD Graphics 617 (low power)
+Initializing Metal device caps: Intel(R) UHD Graphics 617
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56095
+Begin MonoManager ReloadAssembly
+Error scanning for extension ivy.xml files: System.UnauthorizedAccessException: Access to the path '/Applications/Unity/Hub/Editor/2020.3.8f1/PlaybackEngines/AndroidPlayer/SDK/build-tools/28.0.3' is denied.
+  at System.IO.__Error.WinIOError (System.Int32 errorCode, System.String maybeFullPath) [0x00129] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileSystemEnumerableIterator`1[TSource].HandleError (System.Int32 hr, System.String path) [0x00006] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileSystemEnumerableIterator`1[TSource].AddSearchableDirsToStack (System.IO.Directory+SearchData localSearchData) [0x00053] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileSystemEnumerableIterator`1[TSource].MoveNext () [0x0008e] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Collections.Generic.List`1[T]..ctor (System.Collections.Generic.IEnumerable`1[T] collection) [0x00077] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.InternalGetFileDirectoryNames (System.String path, System.String userPathOriginal, System.String searchPattern, System.Boolean includeFiles, System.Boolean includeDirs, System.IO.SearchOption searchOption, System.Boolean checkHost) [0x0000f] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.InternalGetFiles (System.String path, System.String searchPattern, System.IO.SearchOption searchOption) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.GetFiles (System.String path, System.String searchPattern, System.IO.SearchOption searchOption) [0x00038] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at UnityEditor.Modules.ModuleManager.LoadLegacyExtensionsFromIvyFiles () [0x000a5] in /Users/bokken/buildslave/unity/build/Editor/Mono/Modules/ModuleManager.cs:253 
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.001303 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 35.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  7.317 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000733 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.435 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2020.3.8f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1123 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 122.2 MB.
+System memory in use after: 122.2 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1565.
+Total: 2.079542 ms (FindLiveObjects: 0.225885 ms CreateObjectMapping: 0.066729 ms MarkObjects: 1.690275 ms  DeleteObjects: 0.095550 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f1e7cced996dafd8ce012bc8c0cabd2') in 0.700461 seconds
+  Import took 0.704061 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000472 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.290 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1118 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 126.8 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1568.
+Total: 1.930388 ms (FindLiveObjects: 0.156492 ms CreateObjectMapping: 0.038489 ms MarkObjects: 1.666257 ms  DeleteObjects: 0.067739 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.654742 seconds.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ffd400cd7b20736c3c1a448f770fa37') in 0.004902 seconds
+  Import took 0.007995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.651370 seconds.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ffd400cd7b20736c3c1a448f770fa37') in 0.001803 seconds
+  Import took 0.004122 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000566 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.437 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1118 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.0 MB.
+System memory in use after: 127.1 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1571.
+Total: 2.094280 ms (FindLiveObjects: 0.184062 ms CreateObjectMapping: 0.048829 ms MarkObjects: 1.786403 ms  DeleteObjects: 0.072434 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.527213 seconds.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '591c9b8639353f6b4f34ac2d70e28bae') in 0.004852 seconds
+  Import took 0.009558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.648963 seconds.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '591c9b8639353f6b4f34ac2d70e28bae') in 0.004753 seconds
+  Import took 0.007752 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000521 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.430 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1118 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.1 MB.
+System memory in use after: 127.2 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1574.
+Total: 1.907236 ms (FindLiveObjects: 0.162702 ms CreateObjectMapping: 0.045527 ms MarkObjects: 1.642452 ms  DeleteObjects: 0.055554 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.103749 seconds.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e6114814cc2080e04486b885ed217b5') in 0.004350 seconds
+  Import took 0.007518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.591366 seconds.
+  path: Assets/OurFractal/Scripts/OurFractalGameManager.cs
+  artifactKey: Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OurFractal/Scripts/OurFractalGameManager.cs using Guid(6ab6f01b9cd924aed98a97ad1e47fbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e6114814cc2080e04486b885ed217b5') in 0.002073 seconds
+  Import took 0.005014 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002478 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.580 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1118 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.3 MB.
+System memory in use after: 127.4 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1577.
+Total: 3.356260 ms (FindLiveObjects: 0.248041 ms CreateObjectMapping: 0.066027 ms MarkObjects: 2.956771 ms  DeleteObjects: 0.083779 ms)
+

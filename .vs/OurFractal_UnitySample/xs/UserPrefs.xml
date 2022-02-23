@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{0758C92E-B43A-0C7F-D0CE-32FD79227557}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/OurFractal/Scripts/OurFractalGameManager.cs">
+    <Files>
+      <File FileName="Assets/OurFractal/Scripts/OurFractalGameManager.cs" Line="13" Column="71" />
+      <File FileName="Assets/OurFractal/Scripts/DefListSceneManager.cs" Line="22" Column="54" />
+      <File FileName="Assets/OurFractal/OurFractalFFI/Class/Definition.cs" Line="75" Column="1" />
+      <File FileName="Assets/OurFractal/Scripts/TagInputController.cs" Line="38" Column="111" />
+      <File FileName="Assets/OurFractal/OurFractalFFI/Class/OurFractalManager.cs" Line="28" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OurFractal_UnitySample" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="OurFractal" expanded="True">
+                <Node name="OurFractalFFI" expanded="True">
+                  <Node name="Class" expanded="True" />
+                </Node>
+                <Node name="Scripts" expanded="True">
+                  <Node name="OurFractalGameManager.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5633a3dc-55f1-4137-aabf-216304692c2a" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
