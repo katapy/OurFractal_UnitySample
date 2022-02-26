@@ -1,42 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 namespace OurFractal
 {
+    /// <summary>
+    /// Our Fractal Game Manager.
+    /// </summary>
     public class OurFractalGameManager : MonoBehaviour
     {
+        /// <summary>
+        /// Game object name;
+        /// </summary>
+        public static string goName = "OurFractalManager";
+
+        private CompositeDisposable compositeDisposable = null;
+        private OurFractalManager manager = null;
+
+        /// <summary>
+        ///  Our Fractal Manager.
+        ///  This property is automatically destroyed
+        ///  when the gameobject is destroyed.
+        ///  Therefore, do not call despose.
+        /// </summary>
+        public OurFractalManager Manager
+        {
+            get
+            {
+                return manager;
+            }
+        }
+
         // Start is called before the first frame update
         void Start()
         {
-            string path = Application.temporaryCachePath + "/files/mfd_test01";
-            Debug.Log("Our Fractal data path: " + path);
-            using (var manager = new OurFractal.OurFractalManager(path, "table_test", "data_test"))
-            {
-                Debug.Log("add def: " + manager.AddDef(0x00100010, "test", OurFractal.DataType.Int, false));
-                foreach (var tag in manager.DefList)
-                {
-                    Debug.Log("tag: " + tag);
-                }
-
-                using (OurFractal.Definition def = manager.GetDefinition(0x00100010))
-                {
-                    Debug.Log(def.Tag.ToString("X"));
-
-                    Debug.Log("name: " + def.Name);
-                    def.Explanation = "exp test";
-                    Debug.Log("exp: " + def.Explanation);
-                }
-
-                manager.WriteDef();
-                manager.ReadDef();
-            }
+            
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this);
+            compositeDisposable = new CompositeDisposable();
+            string path = Application.dataPath + "/files/mfd_test01";
+            manager = new OurFractalManager(path, "table_test", "data_test");
+            compositeDisposable.Add(manager);
+        }
+
+        /// <summary>
+        /// This function call when app is started.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void StartOurFractal()
+        {
+            Debug.Log("Welcome to OurFractal");
+
+            var go = new GameObject(goName);
+            go.AddComponent<OurFractalGameManager>();
+        }
+
+        /// <summary>
+        /// Dispose when destroy.
+        /// </summary>
+        void OnDestroy()
+        {
+            Debug.Log("Destoy");
+            compositeDisposable.Clear();
         }
     }
 }

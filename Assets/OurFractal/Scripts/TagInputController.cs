@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+///Input Field Controller which restricted hex number and 4 digits.
+/// </summary>
 public class TagInputController : MonoBehaviour
 {
     private InputField inputField;
@@ -47,6 +50,7 @@ public class TagInputController : MonoBehaviour
 
     private void OnEndEdit()
     {
+        // if digit less 4, add 0.
         if (!string.IsNullOrWhiteSpace(inputField.text))
         {
             inputField.text = inputField.text.PadLeft(4, '0');

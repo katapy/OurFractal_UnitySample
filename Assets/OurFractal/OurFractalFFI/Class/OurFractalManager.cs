@@ -4,6 +4,9 @@ using System.Text;
 
 namespace OurFractal
 {
+    /// <summary>
+    /// Our Fractal Manager.
+    /// </summary>
     public class OurFractalManager : IDisposable
     {
         #region DllImport
@@ -38,9 +41,13 @@ namespace OurFractal
 
         public void Dispose()
         {
+            UnityEngine.Debug.Log("Destoy OurFractal manager");
             DestroyManager(this.ptr);
         }
 
+        /// <summary>
+        /// Difined tag list
+        /// </summary>
         public string[] DefList
         {
             get
@@ -49,22 +56,42 @@ namespace OurFractal
             }
         }
 
+        /// <summary>
+        /// Add dininition.
+        /// </summary>
+        /// <param name="tag">tag</param>
+        /// <param name="name">name</param>
+        /// <param name="dataType">data type</param>
+        /// <param name="isMultiple">is multiple</param>
+        /// <returns></returns>
         public bool AddDef(uint tag, string name, DataType dataType, bool isMultiple)
         {
             return AddDefinition(this.ptr, tag, Encoding.UTF8.GetBytes(name), dataType, isMultiple);
         }
 
+        /// <summary>
+        /// Get definition.
+        /// </summary>
+        /// <param name="tag">tag of definition.</param>
+        /// <returns>definition</returns>
         public Definition GetDefinition(uint tag)
         {
             return new Definition(this.ptr, tag);
         }
 
-
+        /// <summary>
+        /// Write definition.
+        /// </summary>
+        /// <returns>Is success</returns>
         public bool WriteDef()
         {
             return WriteDef(ptr);
         }
 
+        /// <summary>
+        /// Read definition.
+        /// </summary>
+        /// <returns>Is success</returns>
         public bool ReadDef()
         {
             return ReadDef(ptr);
