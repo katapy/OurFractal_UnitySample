@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/OurFractal/Scenes/OurFractalDefList.unity
+    guid: 03b447ebbdbc74b2a95f71b718687dcb
+  - enabled: 1
+    path: Assets/OurFractal/Scenes/OurFractalAddDef.unity
+    guid: 27ce514275435479c9bc2ce90c5f28a5
   m_configObjects: {}

@@ -5,6 +5,9 @@ using OurFractal.FFI;
 
 namespace OurFractal
 {
+    /// <summary>
+    /// Our Fractal Definition
+    /// </summary>
     public class Definition: IDisposable
     {
         #region DLLImport
@@ -47,6 +50,9 @@ namespace OurFractal
             DestroyDef(defPtr);
         }
 
+        /// <summary>
+        /// Tag of definition.
+        /// </summary>
         public uint Tag
         {
             get
@@ -55,6 +61,9 @@ namespace OurFractal
             }
         }
 
+        /// <summary>
+        /// Name of definition.
+        /// </summary>
         public string Name
         {
             get
@@ -63,6 +72,9 @@ namespace OurFractal
             }
         }
 
+        /// <summary>
+        /// Explanation of definition.
+        /// </summary>
         public string Explanation
         {
             get
@@ -75,6 +87,10 @@ namespace OurFractal
             }
         }
 
+        /// <summary>
+        /// Tag formatted  (xxxx,xxxx) style.
+        /// </summary>
+        /// <returns> formatted tag. </returns>
         public string ShowTag()
         {
             string tagStr = tag.ToString("X8");
