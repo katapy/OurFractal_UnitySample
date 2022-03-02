@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -30,18 +31,25 @@ namespace OurFractal
         #endregion DllImport
 
         private IntPtr ptr;
+        private Dictionary<uint, Definition> createdDefs = null;
 
         public OurFractalManager(string filePath, string tableName, string dataName)
         {
             this.ptr = MakeManager(
-                Encoding.UTF8.GetBytes(filePath),
-                Encoding.UTF8.GetBytes(tableName),
-                Encoding.UTF8.GetBytes(dataName));
+                FFI.FFIConverter.SetCString(filePath),
+                FFI.FFIConverter.SetCString(tableName),
+                FFI.FFIConverter.SetCString(dataName));
+
+            createdDefs = new Dictionary<uint, Definition>();
         }
 
         public void Dispose()
         {
             UnityEngine.Debug.Log("Destoy OurFractal manager");
+            foreach (var def in createdDefs.Values)
+            {
+                def.Dispose();
+            }
             DestroyManager(this.ptr);
         }
 
@@ -52,7 +60,7 @@ namespace OurFractal
         {
             get
             {
-                return GetDefList(this.ptr).Split(' ');
+                return FFI.FFIConverter.GetCString(GetDefList(this.ptr)).Split(' ');
             }
         }
 
@@ -66,7 +74,7 @@ namespace OurFractal
         /// <returns></returns>
         public bool AddDef(uint tag, string name, DataType dataType, bool isMultiple)
         {
-            return AddDefinition(this.ptr, tag, Encoding.UTF8.GetBytes(name), dataType, isMultiple);
+            return AddDefinition(this.ptr, tag, FFI.FFIConverter.SetCString(name), dataType, isMultiple);
         }
 
         /// <summary>
@@ -76,7 +84,57 @@ namespace OurFractal
         /// <returns>definition</returns>
         public Definition GetDefinition(uint tag)
         {
-            return new Definition(this.ptr, tag);
+            if (!HasDef(tag))
+            {
+                throw new Exception($"Tag {tag.ToString("X8")} is not defined");
+            }
+
+            if (!createdDefs.ContainsKey(tag))
+            {
+                var def = new Definition(this.ptr, tag);
+                createdDefs.Add(tag, def);
+            }
+
+            return createdDefs[tag];
+        }
+
+        /// <summary>
+        /// Get definition.
+        /// </summary>
+        /// <param name="tag">tag of definition.</param>
+        /// <returns>definition</returns>
+        public Definition GetDefinition(string tagStr)
+        {
+            uint tag = uint.Parse(tagStr,
+                    System.Globalization.NumberStyles.HexNumber);
+            return GetDefinition(tag);
+        }
+
+        /// <summary>
+        /// Does manager has definition.
+        /// </summary>
+        /// <param name="tag">definition tag</param>
+        /// <returns> Y/N </returns>
+        public bool HasDef(string tag)
+        {
+            foreach (var def in DefList)
+            {
+                if (def == tag)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Does manager has definition.
+        /// </summary>
+        /// <param name="tag">definition tag</param>
+        /// <returns> Y/N </returns>
+        public bool HasDef(uint tag)
+        {
+            return HasDef(tag.ToString("X8"));
         }
 
         /// <summary>
