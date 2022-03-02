@@ -44,6 +44,7 @@ namespace OurFractal
 
         }
 
+        // Awake is called on load script
         private void Awake()
         {
             DontDestroyOnLoad(this);

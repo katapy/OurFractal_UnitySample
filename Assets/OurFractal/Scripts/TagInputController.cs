@@ -27,6 +27,7 @@ public class TagInputController : MonoBehaviour
         
     }
 
+    // OnValueChanged is called after value changed.
     private void OnValueChanged()
     {
         /// Tag must 4 digits and able to represent a hexadecimal number.
@@ -48,6 +49,7 @@ public class TagInputController : MonoBehaviour
         }
     }
 
+    // OnValueChanged is called after end edited.
     private void OnEndEdit()
     {
         // if digit less 4, add 0.
