@@ -57,14 +57,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/OurFractal/OurFractalFFI/Struct/FFIDef.cs" />
+    <Compile Include="Assets/OurFractal/Scripts/EntityPanalManager.cs" />
     <Compile Include="Assets/OurFractal/OurFractalFFI/Class/Definition.cs" />
     <Compile Include="Assets/OurFractal/OurFractalFFI/Enum/DataType.cs" />
+    <Compile Include="Assets/Tool/Scripts/Class/LoadSceneButton.cs" />
+    <Compile Include="Assets/OurFractal/Scripts/ComponentSceneManager.cs" />
     <Compile Include="Assets/OurFractal/Scripts/TagInputController.cs" />
     <Compile Include="Assets/OurFractal/Scripts/AddDefSceneManager.cs" />
     <Compile Include="Assets/OurFractal/OurFractalFFI/Class/OurFractalManager.cs" />
     <Compile Include="Assets/OurFractal/Scripts/DefListSceneManager.cs" />
     <Compile Include="Assets/OurFractal/Scripts/OurFractalGameManager.cs" />
-    <Compile Include="Assets/OurFractal/Scripts/LoadAddDefButton.cs" />
+    <Compile Include="Assets/OurFractal/Scripts/SwitchButton.cs" />
+    <Compile Include="Assets/Tool/Scripts/Interface/ILoadScene.cs" />
+    <Compile Include="Assets/OurFractal/OurFractalFFI/Class/FFIConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

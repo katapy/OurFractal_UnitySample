@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using SceneTool;
+
 namespace OurFractal
 {
     /// <summary>
-    /// "OurFractalDEfList" Scene manager.
+    /// "OurFractalDefList" Scene manager.
     /// </summary>
     public class DefListSceneManager : MonoBehaviour
     {
@@ -48,6 +50,8 @@ namespace OurFractal
                 var def = manager.GetDefinition(uint.Parse(tag, System.Globalization.NumberStyles.HexNumber));
                 clone.GetComponentInChildren<Text>().text
                     = def.ShowTag() + "\n\t" + def.Name;
+                clone.gameObject.GetComponent<LoadSceneButton>().SceneObj
+                    = new object[] { def };
             }
             bottomPanel.transform.SetAsLastSibling();
         }
