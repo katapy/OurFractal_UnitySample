@@ -74,14 +74,29 @@ namespace OurFractal
                 Debug.LogWarning("Children does not exit in this definition");
                 return;
             }
-            foreach (var child in children)
+
+            for(var i = 0; i < children.Length; i++)
             {
-                var def = manager.GetDefinition(child);
+                /// Create child entity.
+                var def = manager.GetDefinition(children[i]);
                 var clone = Instantiate(this, transform.parent);
-                clone.transform.localPosition += new Vector3(0, -240, 0);
-                clone.GetComponent<EntityPanalManager>().Tag = child;
+                clone.GetComponent<EntityPanalManager>().Tag = children[i];
                 clone.GetComponentInChildren<Text>().text
                     = $"{def.ShowTag()}\n\r{def.Name}";
+
+                /// Set entity position.
+                var posX = transform.localPosition.x + (i - (children.Length - 1) / 2.0f) * GetComponent<RectTransform>().sizeDelta.x;
+                var posY = transform.localPosition.y - GetComponent<RectTransform>().sizeDelta.y * 2;
+                clone.transform.localPosition = new Vector3(posX, posY);
+                clone.transform.SetAsFirstSibling();
+
+                /// Create line which connect parent entity and child entity.
+                var line = clone.transform.GetChild(0);
+                line.position = Vector3.Lerp(transform.position, clone.transform.position, 0.5f);
+                var rot = Mathf.Atan2(transform.localPosition.x - posX, transform.localPosition.y - posY);
+                line.rotation = Quaternion.Euler(0, 0, - rot * Mathf.Rad2Deg);
+                line.gameObject.SetActive(true);
+                line.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(10, Vector3.Distance(transform.localPosition, clone.transform.localPosition));
             }
         }
     }
