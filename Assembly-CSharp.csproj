@@ -65,11 +65,11 @@
     <Compile Include="Assets/OurFractal/Scripts/TagInputController.cs" />
     <Compile Include="Assets/OurFractal/Scripts/AddDefSceneManager.cs" />
     <Compile Include="Assets/OurFractal/OurFractalFFI/Class/OurFractalManager.cs" />
+    <Compile Include="Assets/OurFractal/OurFractalFFI/Class/FFIConverter.cs" />
     <Compile Include="Assets/OurFractal/Scripts/DefListSceneManager.cs" />
     <Compile Include="Assets/OurFractal/Scripts/OurFractalGameManager.cs" />
     <Compile Include="Assets/OurFractal/Scripts/SwitchButton.cs" />
     <Compile Include="Assets/Tool/Scripts/Interface/ILoadScene.cs" />
-    <Compile Include="Assets/OurFractal/OurFractalFFI/Class/FFIConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

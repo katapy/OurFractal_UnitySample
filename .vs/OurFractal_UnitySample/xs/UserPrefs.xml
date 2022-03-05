@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{0758C92E-B43A-0C7F-D0CE-32FD79227557}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/OurFractal/Scripts/TagInputController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/OurFractal/Scripts/OurFractalGameManager.cs">
     <Files>
+      <File FileName="Assets/OurFractal/Scripts/EntityPanalManager.cs" Line="1" Column="1" />
       <File FileName="Assets/OurFractal/Scripts/OurFractalGameManager.cs" Line="47" Column="42" />
-      <File FileName="Assets/OurFractal/Scripts/DefListSceneManager.cs" Line="54" Column="35" />
-      <File FileName="Assets/OurFractal/Scripts/ComponentSceneManager.cs" Line="20" Column="6" />
-      <File FileName="Assets/OurFractal/Scripts/EntityPanalManager.cs" Line="7" Column="2" />
-      <File FileName="Assets/OurFractal/Scripts/AddDefSceneManager.cs" Line="132" Column="62" />
-      <File FileName="Assets/OurFractal/Scripts/Interface/ILoadScene.cs" Line="10" Column="22" />
-      <File FileName="Assets/OurFractal/Scripts/LoadSceneButton.cs" Line="43" Column="74" />
-      <File FileName="Assets/OurFractal/Scripts/SwitchButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/OurFractal/Scripts/TagInputController.cs" Line="1" Column="1" />
+      <File FileName="Assets/OurFractal/Scripts/DefListSceneManager.cs" />
+      <File FileName="Assets/OurFractal/Scripts/ComponentSceneManager.cs" />
+      <File FileName="Assets/OurFractal/Scripts/AddDefSceneManager.cs" />
+      <File FileName="Assets/OurFractal/Scripts/SwitchButton.cs" />
+      <File FileName="Assets/OurFractal/Scripts/TagInputController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +19,7 @@
                   <Node name="Class" expanded="True" />
                 </Node>
                 <Node name="Scripts" expanded="True">
-                  <Node name="TagInputController.cs" selected="True" />
+                  <Node name="EntityPanalManager.cs" selected="True" />
                 </Node>
               </Node>
               <Node name="Tool" expanded="True">
@@ -38,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5633a3dc-55f1-4137-aabf-216304692c2a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6741124e-cd08-4c38-b8e3-9d72cd9fbb42" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
