@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using SceneTool;
+using System;
 
 namespace OurFractal
 {
@@ -31,6 +32,9 @@ namespace OurFractal
         private InputField expInput;
 
         [SerializeField]
+        private Toggle isChildOf0Toggle;
+
+        [SerializeField]
         private GameObject ChildrenPanel;
 
         private bool isUpdate;
@@ -42,8 +46,16 @@ namespace OurFractal
 
             var manager = GameObject.Find(OurFractalGameManager.goName).
                 GetComponent<OurFractalGameManager>().Manager;
+
+            // Create select children panel. 
             foreach (var tag in manager.DefList)
             {
+                // Exclude (0000,0000) tag.
+                if (tag == "00000000")
+                {
+                    continue;
+                }
+
                 var def = manager.GetDefinition(uint.Parse(tag, System.Globalization.NumberStyles.HexNumber));
                 var panel = Instantiate(ChildrenPanel, ChildrenPanel.transform.parent);
                 panel.name = tag;
@@ -90,26 +102,21 @@ namespace OurFractal
             uint tag = uint.Parse(groupTagInput.text + elementTagInput.text,
                 System.Globalization.NumberStyles.HexNumber);
             string name = nameInput.text;
-            DataType dataType = DataType.Int;
-            switch (dataTypeDropdown.value)
-            {
-                case 1:
-                    dataType = DataType.Int;
-                    break;
-                case 2:
-                    dataType = DataType.Float;
-                    break;
-                case 3:
-                    dataType = DataType.String;
-                    break;
-            }
+            DataType dataType = (DataType)Enum.ToObject(typeof(DataType), dataTypeDropdown.value);
             string exp = expInput.text;
 
             var manager = GameObject.Find(OurFractalGameManager.goName).
                 GetComponent<OurFractalGameManager>().Manager;
             manager.AddDef(tag, name, dataType, false);
             manager.GetDefinition(tag).Explanation = exp;
-            foreach (var switchButton in ChildrenPanel.transform.parent.GetComponentsInChildren<SwitchButton>())
+            if (isChildOf0Toggle.isOn)
+            {
+                Debug.Log("Add child of 0000_0000");
+                manager.GetDefinition(0).AddChildren(manager.GetDefinition(tag));
+            }
+
+            foreach (var switchButton in ChildrenPanel.transform.parent.
+                GetComponentsInChildren<SwitchButton>())
             {
                 if (switchButton.Bool)
                 {
@@ -130,13 +137,16 @@ namespace OurFractal
         {
             uint tag = uint.Parse(groupTagInput.text + elementTagInput.text,
                 System.Globalization.NumberStyles.HexNumber);
-            // string name = nameInput.text;
             string exp = expInput.text;
 
             var manager = GameObject.Find(OurFractalGameManager.goName).
                 GetComponent<OurFractalGameManager>().Manager;
-            // manager.GetDefinition(tag).Name = name;
             manager.GetDefinition(tag).Explanation = exp;
+            if (isChildOf0Toggle.isOn && isChildOf0Toggle.interactable)
+            {
+                manager.GetDefinition(0).AddChildren(manager.GetDefinition(tag));
+            }
+
             foreach (var switchButton in ChildrenPanel.transform.parent.GetComponentsInChildren<SwitchButton>())
             {
                 if (switchButton.Bool)
@@ -179,9 +189,36 @@ namespace OurFractal
             var tag = def.Tag.ToString("X8");
             groupTagInput.text = tag.Substring(0, 4);
             elementTagInput.text = tag.Substring(4, 4);
+            dataTypeDropdown.value = (int)def.DataType;
+            nameInput.text = def.Name;
+            expInput.text = def.Explanation;
+            var manager = GameObject.Find(OurFractalGameManager.goName).
+                GetComponent<OurFractalGameManager>().Manager;
+            foreach (var child in manager.GetDefinition(0).Children ?? new string[] { })
+            {
+                if (child == tag)
+                {
+                    isChildOf0Toggle.isOn = true;
+                    break;
+                }
+            }
 
+            // These value cannot convert.
             groupTagInput.interactable = false;
             elementTagInput.interactable = false;
+            dataTypeDropdown.interactable = false;
+            nameInput.interactable = false;
+
+            // If you set child once, you cannnot exclude child.
+            isChildOf0Toggle.interactable = !isChildOf0Toggle.isOn;
+            var parent = ChildrenPanel.transform.parent;
+            for (var i = 0; i < parent.childCount; i++)
+            {
+                if (def.HasChild(parent.GetChild(i).name))
+                {
+                    parent.GetChild(i).GetComponentInChildren<Button>().interactable = false;
+                }
+            }
 
             isUpdate = true;
         }

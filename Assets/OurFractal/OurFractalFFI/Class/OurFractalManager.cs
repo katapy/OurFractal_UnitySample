@@ -11,13 +11,13 @@ namespace OurFractal
     public class OurFractalManager : IDisposable
     {
         #region DllImport
-        [DllImport("libour_fractal_ffi.dylib", CharSet = CharSet.Unicode, EntryPoint = "make_manager")]
+        [DllImport("libour_fractal_ffi.dylib", EntryPoint = "make_manager")]
         static extern IntPtr MakeManager(byte[] filePath, byte[] tableName, byte[] dataName);
 
         [DllImport("libour_fractal_ffi.dylib", EntryPoint = "destroy_manager")]
         static extern void DestroyManager(IntPtr managerPtr);
 
-        [DllImport("libour_fractal_ffi.dylib", CharSet = CharSet.Unicode, EntryPoint = "add_definition")]
+        [DllImport("libour_fractal_ffi.dylib", EntryPoint = "add_definition")]
         static extern bool AddDefinition(IntPtr managerPtr, uint tag, byte[] name, DataType dataType, bool isMultiple);
 
         [DllImport("libour_fractal_ffi.dylib", EntryPoint = "get_def_list")]
