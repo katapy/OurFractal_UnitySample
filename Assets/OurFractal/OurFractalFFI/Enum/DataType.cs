@@ -6,8 +6,8 @@ namespace OurFractal
     /// </summary>
     public enum DataType
     {
-        Int,
-        Float,
-        String
+        Int = 0,
+        Float = 1,
+        String = 2
     }
 }
