@@ -15,9 +15,14 @@ namespace OurFractal
         /// </summary>
         public string Tag;
 
-        private OurFractalManager manager;
+        /// <summary>
+        /// Nest of entity.
+        /// </summary>
+        public int Nest;
 
+        private OurFractalManager manager;
         private bool isShowChildren;
+
 
         // Start is called before the first frame update
         void Start()
@@ -75,12 +80,23 @@ namespace OurFractal
                 return;
             }
 
+            // Delete same or more than deep enst enntity to avoid to hide enntity.
+            for (var i = 0; i < transform.parent.childCount; i++)
+            {
+                if (transform.parent.GetChild(i).GetComponent<EntityPanalManager>().Nest > Nest)
+                {
+                    Destroy(transform.parent.GetChild(i).gameObject);
+                }
+            }
+
+            // Create children.
             for(var i = 0; i < children.Length; i++)
             {
                 /// Create child entity.
                 var def = manager.GetDefinition(children[i]);
                 var clone = Instantiate(this, transform.parent);
                 clone.GetComponent<EntityPanalManager>().Tag = children[i];
+                clone.GetComponent<EntityPanalManager>().Nest = Nest + 1;
                 clone.GetComponentInChildren<Text>().text
                     = $"{def.ShowTag()}\n\r{def.Name}";
 

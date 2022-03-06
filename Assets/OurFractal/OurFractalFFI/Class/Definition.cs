@@ -26,7 +26,7 @@ namespace OurFractal
         [DllImport("libour_fractal_ffi.dylib", EntryPoint = "get_def_exp")]
         static extern string GetExp(IntPtr defPtr);
 
-        [DllImport("libour_fractal_ffi.dylib", CharSet = CharSet.Unicode, EntryPoint = "set_def_exp")]
+        [DllImport("libour_fractal_ffi.dylib", EntryPoint = "set_def_exp")]
         static extern void SetExp(IntPtr defPtr, byte[] exp);
 
         [DllImport("libour_fractal_ffi.dylib", EntryPoint = "add_def_children")]
@@ -79,6 +79,17 @@ namespace OurFractal
             get
             {
                 return FFIConverter.GetCString(GetName(defPtr));
+            }
+        }
+
+        /// <summary>
+        /// Definition data type.
+        /// </summary>
+        public DataType DataType
+        {
+            get
+            {
+                return dataType;
             }
         }
 
