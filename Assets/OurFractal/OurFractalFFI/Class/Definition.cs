@@ -82,6 +82,9 @@ namespace OurFractal
             }
         }
 
+        /// <summary>
+        /// Definition data type.
+        /// </summary>
         public DataType DataType
         {
             get
