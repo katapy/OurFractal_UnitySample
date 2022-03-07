@@ -10,6 +10,9 @@ namespace OurFractal
     /// </summary>
     public class EntityPanalManager : MonoBehaviour
     {
+        private OurFractalManager manager;
+        private bool isShowChildren;
+
         /// <summary>
         /// Entity tag.
         /// </summary>
@@ -19,10 +22,6 @@ namespace OurFractal
         /// Nest of entity.
         /// </summary>
         public int Nest;
-
-        private OurFractalManager manager;
-        private bool isShowChildren;
-
 
         // Start is called before the first frame update
         void Start()
@@ -77,6 +76,9 @@ namespace OurFractal
             if (children == null)
             {
                 Debug.LogWarning("Children does not exit in this definition");
+                GetComponent<PopupMessage>()
+                    .ShowPopup("Children does not exit in this definition",
+                    PopupMessage.MessageType.waring);
                 return;
             }
 
