@@ -586,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ff436cdea53467fa83dc76e4fd81d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nullMessage: '{0} does not exit in this {1}'
   Tag: 00000000
   Nest: 0
 --- !u!114 &712082687
