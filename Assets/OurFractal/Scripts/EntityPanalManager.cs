@@ -10,6 +10,12 @@ namespace OurFractal
     /// </summary>
     public class EntityPanalManager : MonoBehaviour
     {
+        private OurFractalManager manager;
+        private bool isShowChildren;
+
+        [SerializeField]
+        private string nullMessage;
+
         /// <summary>
         /// Entity tag.
         /// </summary>
@@ -19,10 +25,6 @@ namespace OurFractal
         /// Nest of entity.
         /// </summary>
         public int Nest;
-
-        private OurFractalManager manager;
-        private bool isShowChildren;
-
 
         // Start is called before the first frame update
         void Start()
@@ -69,14 +71,16 @@ namespace OurFractal
         }
 
         /// <summary>
-        /// Create chidlren enttity.
+        /// Create chidlren entity.
         /// </summary>
         private void CreateChildrenEntity()
         {
             var children = manager.GetDefinition(Tag).Children;
             if (children == null)
             {
-                Debug.LogWarning("Children does not exit in this definition");
+                GetComponent<PopupMessage>()
+                    .ShowPopup(string.Format(nullMessage, "Children", "Definition"),
+                    PopupMessage.MessageType.waring);
                 return;
             }
 

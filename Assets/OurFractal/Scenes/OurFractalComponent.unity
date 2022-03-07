@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 712082685}
   - component: {fileID: 712082684}
   - component: {fileID: 712082686}
+  - component: {fileID: 712082687}
   m_Layer: 5
   m_Name: EntityPanel
   m_TagString: Untagged
@@ -585,7 +586,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ff436cdea53467fa83dc76e4fd81d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nullMessage: '{0} does not exit in this {1}'
   Tag: 00000000
+  Nest: 0
+--- !u!114 &712082687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712082682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8415c05e74c41ae968f6c2e9838513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupCanvas: {fileID: 3361688872632268379, guid: 43fe5d2d2d1d345fdb3e7eaf51e258da, type: 3}
 --- !u!1 &751815434
 GameObject:
   m_ObjectHideFlags: 0

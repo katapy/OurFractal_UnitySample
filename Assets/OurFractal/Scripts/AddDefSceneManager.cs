@@ -111,7 +111,6 @@ namespace OurFractal
             manager.GetDefinition(tag).Explanation = exp;
             if (isChildOf0Toggle.isOn)
             {
-                Debug.Log("Add child of 0000_0000");
                 manager.GetDefinition(0).AddChildren(manager.GetDefinition(tag));
             }
 
@@ -131,7 +130,7 @@ namespace OurFractal
         }
 
         /// <summary>
-        /// 
+        /// Update definition.
         /// </summary>
         private void UpdateDef()
         {
@@ -163,7 +162,7 @@ namespace OurFractal
         }
 
         /// <summary>
-        /// 
+        /// This fuction called when scene loaded.
         /// </summary>
         /// <param name="obj"></param>
         public void SceneLoaded(object[] obj)
